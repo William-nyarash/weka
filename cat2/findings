@@ -1,0 +1,63 @@
+=== Run information ===
+
+Scheme:       weka.associations.Apriori -N 20 -T 0 -C 0.8 -D 0.05 -U 1.0 -M 0.05 -S -1.0 -c -1
+Relation:     german_credit-weka.filters.unsupervised.attribute.Remove-R9-11,19-20-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.unsupervised.attribute.NumericToNominal-Rfirst-last
+Instances:    1000
+Attributes:   16
+              checking_status
+              duration
+              credit_history
+              purpose
+              credit_amount
+              savings_status
+              employment
+              installment_commitment
+              property_magnitude
+              age
+              other_payment_plans
+              housing
+              existing_credits
+              job
+              num_dependents
+              class
+=== Associator model (full training set) ===
+
+
+Apriori
+=======
+
+Minimum support: 0.45 (450 instances)
+Minimum metric <confidence>: 0.8
+Number of cycles performed: 11
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 9
+
+Size of set of large itemsets L(2): 16
+
+Size of set of large itemsets L(3): 4
+
+Best rules found:
+
+ 1. credit_history=existing paid 530 ==> existing_credits=0 478    <conf:(0.9)> lift:(1.42) lev:(0.14) [142] conv:(3.67)
+ 2. other_payment_plans=none job=skilled 529 ==> num_dependents=0 470    <conf:(0.89)> lift:(1.05) lev:(0.02) [22] conv:(1.37)
+ 3. other_payment_plans=none existing_credits=0 522 ==> num_dependents=0 460    <conf:(0.88)> lift:(1.04) lev:(0.02) [18] conv:(1.28)
+ 4. job=skilled 630 ==> num_dependents=0 551    <conf:(0.87)> lift:(1.04) lev:(0.02) [18] conv:(1.22)
+ 5. credit_history=existing paid 530 ==> num_dependents=0 462    <conf:(0.87)> lift:(1.03) lev:(0.01) [14] conv:(1.19)
+ 6. existing_credits=0 633 ==> num_dependents=0 550    <conf:(0.87)> lift:(1.03) lev:(0.02) [15] conv:(1.17)
+ 7. other_payment_plans=none housing=own 576 ==> num_dependents=0 497    <conf:(0.86)> lift:(1.02) lev:(0.01) [10] conv:(1.12)
+ 8. other_payment_plans=none 814 ==> num_dependents=0 698    <conf:(0.86)> lift:(1.01) lev:(0.01) [10] conv:(1.08)
+ 9. job=skilled num_dependents=0 551 ==> other_payment_plans=none 470    <conf:(0.85)> lift:(1.05) lev:(0.02) [21] conv:(1.25)
+10. credit_history=existing paid 530 ==> other_payment_plans=none 452    <conf:(0.85)> lift:(1.05) lev:(0.02) [20] conv:(1.25)
+11. other_payment_plans=none class=good 590 ==> num_dependents=0 503    <conf:(0.85)> lift:(1.01) lev:(0) [4] conv:(1.04)
+12. housing=own 713 ==> num_dependents=0 607    <conf:(0.85)> lift:(1.01) lev:(0) [4] conv:(1.03)
+13. num_dependents=0 class=good 591 ==> other_payment_plans=none 503    <conf:(0.85)> lift:(1.05) lev:(0.02) [21] conv:(1.24)
+14. savings_status=<100 603 ==> num_dependents=0 513    <conf:(0.85)> lift:(1.01) lev:(0) [3] conv:(1.03)
+15. class=good 700 ==> num_dependents=0 591    <conf:(0.84)> lift:(1) lev:(-0) [0] conv:(0.99)
+16. class=good 700 ==> other_payment_plans=none 590    <conf:(0.84)> lift:(1.04) lev:(0.02) [20] conv:(1.17)
+17. job=skilled 630 ==> other_payment_plans=none 529    <conf:(0.84)> lift:(1.03) lev:(0.02) [16] conv:(1.15)
+18. existing_credits=0 num_dependents=0 550 ==> other_payment_plans=none 460    <conf:(0.84)> lift:(1.03) lev:(0.01) [12] conv:(1.12)
+19. num_dependents=0 845 ==> other_payment_plans=none 698    <conf:(0.83)> lift:(1.01) lev:(0.01) [10] conv:(1.06)
+20. existing_credits=0 633 ==> other_payment_plans=none 522    <conf:(0.82)> lift:(1.01) lev:(0.01) [6] conv:(1.05)
+
